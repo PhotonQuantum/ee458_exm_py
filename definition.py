@@ -20,15 +20,15 @@ class Account:
 
 
 class Advertiser:
-    def __init__(self, name: str, accounts: Optional[set] = None):
+    def __init__(self, name: str):
         self.name = name
-        if accounts is None:
-            self.accounts = set()
-        else:
-            self.accounts = accounts
+        self.accounts = set()
 
     def __repr__(self):
         return f'<Advertiser "{self.name}" accounts={self.accounts}>'
+
+    def __contains__(self, item):
+        return self.accounts.__contains__(item)
 
     def add_account(self, a):
         self.accounts.add(a)

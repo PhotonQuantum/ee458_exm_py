@@ -17,8 +17,8 @@ class TestAddToDifferentAdvertiser(unittest.TestCase):
         self.assertIsNotNone(self.alice.owner, "Who's my owner?")
 
     def test_contains(self):
-        self.assertNotIn(self.alice, self.charlie.accounts, "I shouldn't be in charlie.")
-        self.assertIn(self.alice, self.daniel.accounts, "I should be one of daniel.")
+        self.assertNotIn(self.alice, self.charlie, "I shouldn't be in charlie.")
+        self.assertIn(self.alice, self.daniel, "I should be one of daniel.")
 
 
 class TestResetOwner(unittest.TestCase):
@@ -33,8 +33,8 @@ class TestResetOwner(unittest.TestCase):
         self.assertIsNotNone(self.alice.owner, "Who's my owner?")
 
     def test_contains(self):
-        self.assertNotIn(self.alice, self.charlie.accounts, "I shouldn't be in charlie.")
-        self.assertIn(self.alice, self.daniel.accounts, "I should be one of daniel.")
+        self.assertNotIn(self.alice, self.charlie, "I shouldn't be in charlie.")
+        self.assertIn(self.alice, self.daniel, "I should be one of daniel.")
 
 
 def suite():

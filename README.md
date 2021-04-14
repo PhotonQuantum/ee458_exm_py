@@ -35,7 +35,7 @@ AssertionError: unexpectedly None : Who's my owner?
 ======================================================================
 FAIL: test_contains (tests.TestAddToDifferentAdvertiser)
 ----------------------------------------------------------------------
-AssertionError: <Account "alice" owner=None> not found in set() : I should be one of daniel.
+AssertionError: <Account "alice" owner=None> not found in <Advertiser "daniel" accounts=set()> : I should be one of daniel.
 
 ======================================================================
 FAIL: test_owner (tests.TestResetOwner)
@@ -45,7 +45,7 @@ AssertionError: unexpectedly None : Who's my owner?
 ======================================================================
 FAIL: test_contains (tests.TestResetOwner)
 ----------------------------------------------------------------------
-AssertionError: <Account "alice" owner=None> not found in set() : I should be one of daniel.
+AssertionError: <Account "alice" owner=None> not found in <Advertiser "daniel" accounts=set()> : I should be one of daniel.
 
 ----------------------------------------------------------------------
 Ran 4 tests in 0.001s
