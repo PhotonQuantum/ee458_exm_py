@@ -54,3 +54,21 @@ FAILED (failures=4)
 ```
 
 So how may I change the owner of an `Account` without setting its owner to `None`(`null`) first?
+
+## Fixed Solution
+
+A fixed solution is given in [fixed_definition.py](fixed_definition.py).
+
+```shell
+test_owner (tests.get_test_classes.<locals>.TestAddToDifferentAdvertiser) ... ok
+test_contains (tests.get_test_classes.<locals>.TestAddToDifferentAdvertiser) ... ok
+test_owner (tests.get_test_classes.<locals>.TestResetOwner) ... ok
+test_contains (tests.get_test_classes.<locals>.TestResetOwner) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+OK
+```
+
+The best way to implement one-to-many relation in production is to use foreign keys.
