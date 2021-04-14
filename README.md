@@ -71,4 +71,14 @@ Ran 4 tests in 0.001s
 OK
 ```
 
-The best way to implement one-to-many relation in production is to use foreign keys.
+The point is, it's easy to break the constraint if both elements (`Account`) and containers (`Advertiser`)
+can mutate the state, or more specifically, trying to manage the ownership of an element (`Account`) at the same time.
+
+The correct way to implement this relation is to leave all the mutation work to one of them (the `N` part in this relation,
+i.e. container `Advertiser`), and link the element (`Account`) to its container only.
+
+When considering concurrency, you need sync and transaction to make all these things work. Yes, all the mutex and locking
+mechanism stuff.
+
+If you are lucky enough and have a relational database on your hand, use `foreign keys` to add links from your
+`Account` to `Advertiser` instead.
